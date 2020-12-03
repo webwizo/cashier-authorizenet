@@ -1,5 +1,5 @@
 {
-    "name": "laravel/cashier-authorize",
+    "name": "webwizo/cashier-authorizenet",
     "description": "Laravel Cashier-Authorize provides an expressive, fluent interface to Authorize.net's subscription billing services.",
     "keywords": ["laravel", "stripe", "billing"],
     "license": "MIT",
@@ -7,6 +7,10 @@
         {
             "name": "Matt Lantz",
             "email": "mattlantz@gmail.com"
+        },
+        {
+            "name": "Asif Iqbal",
+            "email": "webwizo@gmail.com"
         },
         {
             "name": "Taylor Otwell",
