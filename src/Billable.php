@@ -13,6 +13,7 @@ use net\authorize\api\contract\v1 as AnetAPI;
 use net\authorize\api\constants as AnetConstants;
 use net\authorize\api\controller as AnetController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Laravel\CashierAuthorizeNet\Exceptions\AuthorizeNetException;
 
 trait Billable
 {
@@ -523,6 +524,7 @@ trait Billable
         } else {
             $errorMessages = $response->getMessages()->getMessage();
             Log::error("Authorize.net Response : " . $errorMessages[0]->getCode() . "  " .$errorMessages[0]->getText());
+            throw new AuthorizeNetException($errorMessages[0]->getText(), $errorMessages[0]->getCode());
         }
 
         return $this;
