@@ -6,11 +6,15 @@ use Exception;
 
 class AuthorizeNetException extends Exception
 {
-    protected $errorCode;
+    private $errorCode;
 
 	public function __construct($message, $errorCode)
 	{
 		$this->errorCode = $errorCode;
 		parent::__construct($message);
 	}
+
+	public function getErrorCode() {
+    	return $this->errorCode;
+    }
 }
